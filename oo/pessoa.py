@@ -18,7 +18,6 @@ class Pessoa:
 if __name__ == '__main__':
     leopoldo = Pessoa(nome='leopoldo')
     joao = Pessoa(nome='João')
-
     luciano = Pessoa(leopoldo, joao, nome='Liciano')
     print(leopoldo.cumprimentar())
     print(leopoldo.nome)
