@@ -24,3 +24,8 @@ if __name__ == '__main__':
     print(leopoldo.idade)
     for filho in luciano.filhos:
         print(filho.nome)
+    luciano.sobrenome = 'Ramalho'
+    del luciano.sobrenome
+    print(luciano.__dict__) #exibe todos os atributos do objeto
+    print(leopoldo.__dict__)
+
