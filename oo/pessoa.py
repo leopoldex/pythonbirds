@@ -18,6 +18,14 @@ class Pessoa:
         self.nome = nome
         self.filhos = list(filhos)
 
+    @staticmethod #decorator
+    def metodo_estatico(): #independe do objeto, pode ser acessado diretamente pela classe
+        return 42
+
+    @classmethod
+    def nome_e_atributo_de_classe(cls):
+        return f'{cls} - olhos {cls.olhos}'
+
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
@@ -32,6 +40,7 @@ if __name__ == '__main__':
         print(filho.nome)
     luciano.sobrenome = 'Ramalho'
     luciano.olhos = 1
+    leopoldo.olhos = 1
     del luciano.olhos
     del luciano.sobrenome
     print(luciano.__dict__) #exibe todos os atributos de instância e não os atributos de classe. Apenas quando houver alteração direta do atributo ele aparecerá aqui.
@@ -39,3 +48,5 @@ if __name__ == '__main__':
     print(Pessoa.olhos)
     print(leopoldo.olhos)
     print(luciano.olhos)
+    print(Pessoa.metodo_estatico(), leopoldo.metodo_estatico())
+    print(Pessoa.nome_e_atributo_de_classe(), leopoldo.nome_e_atributo_de_classe())
