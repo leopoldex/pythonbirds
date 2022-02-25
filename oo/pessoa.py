@@ -29,8 +29,12 @@ class Pessoa:
     def cumprimentar(self):
         return f'Olá {id(self)}'
 
+class Homem(Pessoa):
+    pass
+
+
 if __name__ == '__main__':
-    leopoldo = Pessoa(nome='leopoldo')
+    leopoldo = Homem(nome='leopoldo')
     joao = Pessoa(nome='João')
     luciano = Pessoa(leopoldo, joao, nome='Liciano')
     print(leopoldo.cumprimentar())
